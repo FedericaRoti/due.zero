@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperparts | Due.Zero Ecosistema</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            red: '#e11821',
+                            gray: '#111111',
+                            lightGray: '#F5F5F7'
+                        },
+                        hyper: {
+                            blue: '#003b75',
+                            dark: '#001d3d',
+                            yellow: '#ffd300'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/core.css">
+</head>
+<body class="antialiased bg-hyper-dark text-white selection:bg-hyper-yellow selection:text-hyper-blue overflow-x-hidden">
+
+    <!-- Navbar Semplificata -->
+    <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 bg-hyper-dark/60 border-b border-white/5 transition-colors duration-300">
+        <div class="flex items-center justify-between w-full">
+            <div class="flex items-center gap-4">
+                <div class="w-2 h-2 rounded-full bg-hyper-yellow animate-pulse"></div>
+                <span class="text-[0.6rem] mono uppercase tracking-widest text-white/60">Module / Hyperparts</span>
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="block"><img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto filter brightness-0 invert"></a>
+            </div>
+            <div>
+                <button onclick="window.close()" class="group flex items-center gap-4 focus:outline-none">
+                    <span class="text-[0.6rem] mono uppercase tracking-widest group-hover:text-hyper-yellow transition-colors">Torna al Sito</span>
+                    <svg class="w-4 h-4 opacity-40 group-hover:opacity-100 transition-opacity group-hover:text-hyper-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <section class="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-32 pb-24 overflow-hidden border-b border-white/5">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 z-0 opacity-40 select-none overflow-hidden bg-hyper-dark">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-hyper-blue/30 rounded-full blur-[150px] transform translate-x-1/3 -translate-y-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-hyper-yellow/10 rounded-full blur-[120px] transform -translate-x-1/3 translate-y-1/3"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-7xl relative z-10 flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2 animate-reveal space-y-8">
+                <div class="inline-flex items-center gap-3 px-4 py-2 border border-hyper-yellow/30 rounded-full bg-hyper-yellow/5">
+                    <span class="w-[4px] h-[4px] bg-hyper-yellow rounded-full animate-ping"></span>
+                    <span class="text-[0.6rem] mono uppercase tracking-[0.2em] text-hyper-yellow font-bold">Gestione Ricambi Interattivi</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-white">
+                    Hyper<br><span class="text-hyper-yellow">parts.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/70 font-light leading-relaxed max-w-xl">
+                    La connessione globale tra costruttore e cliente finale. Esplora cataloghi interattivi in 3D e gestisci la filiera after-sales in un'unica piattaforma integrata.
+                </p>
+                <div class="pt-8">
+                    <a href="https://hyperparts.it/" class="inline-flex items-center justify-center gap-4 bg-hyper-yellow text-hyper-dark py-5 px-12 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white transition-all group shadow-xl shadow-hyper-yellow/20 hover:scale-105">
+                        <span>Vai al Catalogo</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Graphic Element -->
+            <div class="lg:w-1/2 animate-reveal w-full relative perspective-1000">
+                <div class="w-full aspect-[4/3] rounded-2xl border border-hyper-blue/30 bg-hyper-blue/10 p-2 shadow-2xl overflow-hidden group">
+                    <img src="./assets/hyperparts.png" alt="Hyperparts Preview" class="w-full h-full object-cover rounded-xl opacity-90 group-hover:scale-105 transition-transform duration-1000 brightness-75 group-hover:brightness-100" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200'">
+                    <div class="absolute inset-0 border border-hyper-yellow/30 rounded-2xl m-2 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Dettagli Tecnici -->
+    <section class="py-24 lg:py-32 bg-hyper-dark px-6 lg:px-12 relative">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="text-xs mono uppercase tracking-[0.4em] text-white/40 mb-16 flex items-center gap-4 animate-reveal text-center lg:text-left">
+                <span class="w-12 h-[1px] bg-white/20 hidden lg:block"></span>
+                Moduli della Piattaforma
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Feature 1 -->
+                <div class="bg-white/5 border border-white/5 p-10 rounded-2xl hover:border-hyper-yellow/50 transition-colors animate-reveal group">
+                    <div class="w-12 h-12 rounded-full bg-hyper-yellow/10 flex items-center justify-center mb-8 group-hover:bg-hyper-yellow/20 transition-colors">
+                        <svg class="w-5 h-5 text-hyper-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Componentistica 3D</h3>
+                    <p class="text-white/60 leading-relaxed font-light">Naviga modelli tridimensionali complessi generati direttamente dai tuoi CAD, identificando il singolo componente esploso in pochi secondi e senza errori.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white/5 border border-white/5 p-10 rounded-2xl hover:border-hyper-yellow/50 transition-colors animate-reveal group" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-full bg-hyper-yellow/10 flex items-center justify-center mb-8 group-hover:bg-hyper-yellow/20 transition-colors">
+                        <svg class="w-5 h-5 text-hyper-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ordini Integrati</h3>
+                    <p class="text-white/60 leading-relaxed font-light">Dal particolare meccanico identificato al carrello: l'ordine dei ricambi avviene direttamente sulla piattaforma e si integra al vostro ERP aziendale in automatico.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white/5 border border-white/5 p-10 rounded-2xl hover:border-hyper-yellow/50 transition-colors animate-reveal group" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-full bg-hyper-yellow/10 flex items-center justify-center mb-8 group-hover:bg-hyper-yellow/20 transition-colors">
+                        <svg class="w-5 h-5 text-hyper-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Performance Aziendali</h3>
+                    <p class="text-white/60 leading-relaxed font-light">Abbattimento drastico degli indici di errore umano nell'invio di codici ricambio, potenziando in modo sostanziale l'assistenza post-vendita al cliente globale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 border-t border-white/5">
+        <div class="container mx-auto max-w-7xl px-6 text-center">
+            <p class="text-white/20 text-[0.6rem] mono uppercase tracking-widest">© 2026 Due.Zero s.r.l. — Ecosistema Digitale</p>
+        </div>
+    </footer>
+
+    <!-- GSAP config -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll('.animate-reveal').forEach((el) => {
+            gsap.from(el, {
+                y: 30, opacity: 0, duration: 1, ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 85%" }
+            });
+        });
+    </script>
+</body>
+</html>

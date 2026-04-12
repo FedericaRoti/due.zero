@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Compliance | Due.Zero</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            red: '#e11821',
+                            gray: '#111111',
+                            lightGray: '#F5F5F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/core.css">
+</head>
+<body class="antialiased bg-black text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 transition-colors duration-300">
+        <div class="flex items-center justify-between w-full">
+            <button id="menu-toggle" class="flex items-center gap-4 group focus:outline-none">
+                <div class="space-y-1.5 burger-lines">
+                    <span class="block w-6 h-0.5 bg-white transition-all group-hover:bg-brand-red"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all group-hover:bg-brand-red"></span>
+                </div>
+                <span class="w-[2px] h-2 bg-brand-red"></span>
+                <span class="menu-text text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Menu</span>
+            </button>
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="../index.html" class="block"><img src="../assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto"></a>
+            </div>
+            <div>
+                <span class="w-[2px] h-2 bg-brand-red"></span>
+                <a href="../index.html#contatti" class="nav-link text-xs mono uppercase tracking-widest group-hover:text-brand-red">Contatti</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side Drawer (Shared Logic) -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/90 z-[60]"></div>
+    <div id="drawer" class="fixed top-0 left-0 w-full md:w-[500px] h-full bg-brand-black z-[70] p-8 md:p-16 flex flex-col justify-between overflow-y-auto">
+        <div>
+            <div class="flex justify-between items-center mb-16">
+                <span class="text-xs mono uppercase tracking-[0.4em] text-white/30 flex items-center gap-2">
+                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                    Navigazione
+                </span>
+                <button id="menu-close" class="group flex items-center gap-2">
+                    <span class="w-[2px] h-2 bg-brand-red"></span>
+                    <span class="text-[0.6rem] mono uppercase tracking-widest text-white/40 group-hover:text-brand-red transition-colors">Chiudi</span>
+                    <div class="relative w-6 h-6">
+                        <span class="absolute top-1/2 left-0 w-6 h-0.5 bg-white rotate-45 group-hover:bg-brand-red transition-all"></span>
+                        <span class="absolute top-1/2 left-0 w-6 h-0.5 bg-white -rotate-45 group-hover:bg-brand-red transition-all"></span>
+                    </div>
+                </button>
+            </div>
+            <nav class="space-y-8">
+                <a href="../index.html" class="drawer-link flex items-center gap-4">
+                    
+                    Home
+                </a>
+                <div id="submenu-parent" class="relative text-nowrap">
+                    <a href="../index.html#servizi" class="drawer-link flex items-center gap-4">
+                        
+                        Servizi <span class="text-brand-red text-sm font-mono">+</span>
+                    </a>
+                    <div id="submenu" class="submenu pl-6 space-y-2 text-sm text-white/40 font-medium">
+                        <a href="manualistica-tecnica.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Manualistica Tecnica</a>
+                        <a href="technical-compliance.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors text-white">Technical Compliance</a>
+                        <a href="traduzioni-multilingue.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Traduzioni Multilingue</a>
+                        <a href="cataloghi-ricambi.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Cataloghi Ricambi</a>
+                        <a href="marketing-industriale.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Marketing Industriale</a>
+                        <a href="photo-video-training.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Photo & Video Training</a>
+                        <a href="modellazione-rendering.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Modellazione & Rendering</a>
+                        <a href="soluzioni-software.html" class="block py-2 hover:text-brand-red transition-colors">Soluzioni Software 2.0</a>
+                    </div>
+                </div>
+                <a href="../index.html#ecosistema" class="drawer-link flex items-center gap-4">
+                    
+                    Ecosistema
+                </a>
+                <a href="../contatti.html" target="_blank" class="drawer-link flex items-center gap-4">
+                    
+                    Contatti
+                </a>
+                
+                <div class="pt-8 border-t border-white/5 space-y-6">
+                    <a href="../chi-siamo.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                        
+                        Chi Siamo
+                    </a>
+                    <a href="../lavora-con-noi.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                        
+                        Lavora con Noi
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Service -->
+    <section class="relative pt-48 pb-24 px-6 lg:px-12 overflow-hidden border-b border-white/10">
+        <div class="absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-10 pointer-events-none">
+            <img src="../assets/software_service_asset_1775933481677.png" alt="" class="w-full h-full object-contain object-right">
+        </div>
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <nav class="flex mb-12 text-xs mono uppercase tracking-widest text-white/30 gap-4 items-center">
+                <span class="w-[2px] h-3 bg-brand-red"></span>
+                <a href="../index.html" class="hover:text-brand-red transition-colors">Home</a>
+                <span>/</span><span class="text-brand-red">Servizi</span>
+            </nav>
+            <div class="max-w-4xl animate-reveal">
+                <h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">Technical <br> <span class="text-white/40">Compliance</span></h1>
+                <p class="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-2xl">Gestione completa della sicurezza del macchinario e conformità alle direttive europee per una protezione legale totale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="section-light py-24 lg:py-40 px-6 lg:px-12 bg-white text-black">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-12 space-y-12 mb-20 animate-reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Sicurezza & Certificazione</h2>
+                    <p class="text-xl md:text-2xl text-black/50 leading-relaxed font-light">Validiamo i vostri macchinari secondo le normative vigenti. Dall'analisi dei rischi alla redazione del fascicolo tecnico, garantiamo che il vostro prodotto sia conforme agli standard CE e internazionali.</p>
+                </div>
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 animate-reveal">
+                    <div class="p-8 border border-black/5 bg-black/5 rounded-sm space-y-4 h-full">
+                        <div class="w-10 h-1 bg-brand-red"></div>
+                        <h4 class="font-bold text-xl uppercase tracking-tight">Marcatura CE</h4>
+                        <p class="text-black/60 text-sm leading-relaxed">Certificazione prodotti e controllo conformità per l'immissione sul mercato unico europeo.</p>
+                    </div>
+                    <div class="p-8 border border-black/5 bg-black/5 rounded-sm space-y-4 h-full">
+                        <div class="w-10 h-1 bg-brand-red"></div>
+                        <h4 class="font-bold text-xl uppercase tracking-tight">Analisi dei Rischi</h4>
+                        <p class="text-black/60 text-sm leading-relaxed">Valutazione sistematica dei pericoli e soluzioni tecniche per la mitigazione del rischio.</p>
+                    </div>
+                    <div class="p-8 border border-black/5 bg-black/5 rounded-sm space-y-4 h-full">
+                        <div class="w-10 h-1 bg-brand-red"></div>
+                        <h4 class="font-bold text-xl uppercase tracking-tight">Fascicolo Tecnico</h4>
+                        <p class="text-black/60 text-sm leading-relaxed">Redazione del dossier tecnico completo obbligatorio per la conformità normativa.</p>
+                    </div>
+                    <div class="p-8 border border-black/5 bg-black/5 rounded-sm space-y-4 h-full">
+                        <div class="w-10 h-1 bg-brand-red"></div>
+                        <h4 class="font-bold text-xl uppercase tracking-tight">Normative Harmonized</h4>
+                        <p class="text-black/60 text-sm leading-relaxed">Applicazione rigorosa delle norme armonizzate per garantire la presunzione di conformità.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 sticky top-32 space-y-12">
+                    <div class="border-l-2 border-brand-red pl-8 py-4">
+                        <span class="text-xs mono uppercase tracking-widest text-black/30 flex items-center gap-2 mb-2">
+                            <span class="w-[2px] h-3 bg-brand-red"></span>
+                            Normative
+                        </span>
+                        <div class="space-y-4">
+                            <p class="font-bold text-sm tracking-tight uppercase flex items-center gap-2">
+                                <span class="w-[2px] h-2 bg-brand-red"></span>
+                                Direttiva Macchine 2006/42/CE
+                            </p>
+                            <p class="font-bold text-sm tracking-tight uppercase flex items-center gap-2">
+                                <span class="w-[2px] h-2 bg-brand-red"></span>
+                                Direttiva Bassa Tensione (LVD)
+                            </p>
+                            <p class="font-bold text-sm tracking-tight uppercase flex items-center gap-2">
+                                <span class="w-[2px] h-2 bg-brand-red"></span>
+                                Direttiva EMC
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-black text-white p-8 rounded-sm space-y-6">
+                        <h5 class="text-lg font-bold tracking-tight">Riduci i tuoi rischi legali.</h5>
+                        <p class="text-white/50 text-xs mono leading-relaxed uppercase tracking-widest leading-loose">Analisi dei rischi <br> Fascicolo Tecnico <br> Supporto Ispettivo</p>
+                        <a href="../index.html#contatti" class="block w-full border border-brand-red py-4 text-center text-[0.6rem] mono uppercase tracking-widest hover:bg-brand-red transition-all flex items-center justify-center gap-2">
+                            <span class="w-[1px] h-2 bg-brand-red group-hover:bg-white"></span>
+                            Consulenza Diretta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Service -->
+    <footer class="bg-black py-24 px-6 lg:px-12 border-t border-white/5">
+        <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left"><img src="../assets/DueZero_logo.png" alt="Due.Zero" class="h-6 w-auto mb-6 opacity-40 mx-auto md:mx-0"><p class="text-white/20 text-[0.6rem] mono uppercase tracking-widest">© 2026 Due.Zero s.r.l. — P.IVA 02120400342</p></div>
+            <nav class="flex gap-8 text-xs mono uppercase tracking-[0.3em] text-white/40">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="../index.html#servizi" class="hover:text-white transition-colors">Servizi</a>
+                <a href="traduzioni-multilingue.html" class="hover:text-brand-red transition-colors">Next: Traduzioni</a>
+            </nav>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

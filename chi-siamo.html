@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo | Due.Zero</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            red: '#e11821',
+                            gray: '#111111',
+                            lightGray: '#F5F5F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/core.css">
+</head>
+<body class="antialiased bg-black text-white">
+
+    <!-- Navbar Semplificata (Senza Drawer per pagina target blank) -->
+    <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 transition-colors duration-300">
+        <div class="flex items-center justify-between w-full">
+            <div class="flex items-center gap-4">
+                <span class="w-[2px] h-2 bg-brand-red"></span>
+                <span class="text-xs mono uppercase tracking-widest text-white/60">Istituzionale</span>
+            </div>
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="block"><img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto"></a>
+            </div>
+            <div>
+                <button onclick="window.close()" class="group flex items-center gap-4 focus:outline-none">
+                    <span class="w-[2px] h-2 bg-brand-red"></span>
+                    <span class="text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Chiudi Scheda</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <section class="relative h-[90vh] flex items-center px-6 lg:px-12 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/chi-siamo-hero.png" alt="" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <nav class="flex mb-12 text-xs mono uppercase tracking-widest text-white/30 gap-4 items-center">
+                <span class="w-[2px] h-3 bg-brand-red"></span>
+                <span>Home</span>
+                <span>/</span><span class="text-brand-red">Chi Siamo</span>
+            </nav>
+            <div class="max-w-4xl animate-reveal">
+                <h1 class="text-6xl md:text-9xl font-bold tracking-tighter leading-none mb-8">Visione <br> <span class="text-white/40">Tecnica.</span></h1>
+                <p class="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-2xl">Dal 2008, Due.Zero affianca le aziende industriali nella gestione della conoscenza tecnica attraverso l'innovazione digitale e l'automazione dei processi.</p>
+            </div>
+        </div>
+        
+        <!-- Indicatore Scroll -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce">
+            <span class="text-[0.5rem] mono uppercase tracking-[0.4em] text-white/20 rotate-90 mb-8">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-brand-red to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Storia e Visione -->
+    <section class="py-24 lg:py-40 px-6 lg:px-12 bg-white text-black relative z-10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-12 mb-12">
+                     <span class="text-[0.6rem] mono uppercase tracking-[0.4em] text-brand-red block mb-6 flex items-center gap-2">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        La Nostra Storia
+                    </span>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-12">Dalla manualistica <br> all'Intelligence 2.0</h2>
+                </div>
+                
+                <div class="lg:col-span-7 space-y-12 animate-reveal">
+                    <p class="text-2xl text-black/50 leading-relaxed font-light">
+                        Due.Zero nasce a Reggio Emilia con una missione chiara: rivoluzionare il modo in cui le aziende industriali comunicano il proprio valore tecnico. 
+                    </p>
+                    <p class="text-lg text-black/70 leading-relaxed">
+                        Inizialmente focalizzati sulla manualistica tecnica e sulla conformità normativa, abbiamo compreso che il vero valore risiedeva nell'automazione. Questo ci ha portato a sviluppare ecosistemi digitali capaci di gestire migliaia di pagine e asset complessi con precisione millimetrica.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 pt-8">
+                        <div>
+                            <span class="text-4xl font-bold flex items-baseline gap-2">2008 <span class="text-sm text-brand-red mono">Est.</span></span>
+                            <p class="text-xs mono uppercase tracking-widest text-black/40 mt-2">Fondazione</p>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-bold flex items-baseline gap-2">15+ <span class="text-sm text-brand-red mono">Anni</span></span>
+                            <p class="text-xs mono uppercase tracking-widest text-black/40 mt-2">Esperienza Tech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 sticky top-32 animate-reveal">
+                    <div class="bg-black text-white p-12 space-y-8 rounded-sm">
+                        <span class="text-[0.6rem] mono uppercase tracking-[0.4em] text-white/30 flex items-center gap-2">
+                            <span class="w-[2px] h-3 bg-brand-red"></span>
+                            Filosofia
+                        </span>
+                        <h3 class="text-3xl font-bold tracking-tight">Precisione come Standard.</h3>
+                        <p class="text-white/50 text-sm leading-relaxed">Operiamo secondo gli standard ISO più rigorosi per garantire che ogni manuale, traduzione o software non sia solo un prodotto, ma uno scudo legale e una leva di business per i nostri clienti.</p>
+                        <div class="space-y-4 pt-4 border-t border-white/10">
+                            <div class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                <span class="text-xs mono uppercase tracking-widest">Verifica ISO 17100</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                <span class="text-xs mono uppercase tracking-widest">Direttiva Macchine 2006/42/CE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hyperparts e Innovazione -->
+    <section class="py-24 lg:py-40 px-6 lg:px-12 bg-brand-gray text-white relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+                <div class="lg:w-1/2 space-y-8 animate-reveal">
+                    <span class="text-[0.6rem] mono uppercase tracking-[0.4em] text-white/30 flex items-center gap-2">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        Innovazione
+                    </span>
+                    <h3 class="text-5xl md:text-7xl font-bold tracking-tighter leading-none" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                        HYPER <span class="text-brand-red">PARTS</span>
+                    </h3>
+                    <p class="text-xl text-white/60 leading-relaxed font-light">
+                        Il nostro ecosistema proprietario per la gestione interattiva dei ricambi. Una soluzione cloud che integra Blockchain e Token per garantire l'immutabilità e la sicurezza dei dati tecnici globali.
+                    </p>
+                    <a href="https://hyperparts.it/" target="_blank" class="inline-block border border-white/20 px-8 py-4 text-[0.7rem] mono uppercase tracking-widest hover:bg-white hover:text-black transition-all">Esplora l'Ecosistema</a>
+                </div>
+                <div class="lg:w-1/2 animate-reveal">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-8 bg-white/5 border border-white/10 space-y-4">
+                            <h4 class="text-xl font-bold uppercase tracking-tight">Blockchain</h4>
+                            <p class="text-sm text-white/40 leading-relaxed">Integrazione di protocolli decentralizzati per la certificazione dei contenuti.</p>
+                        </div>
+                        <div class="p-8 bg-white/5 border border-white/10 space-y-4">
+                            <h4 class="text-xl font-bold uppercase tracking-tight">Cloud Native</h4>
+                            <p class="text-sm text-white/40 leading-relaxed">Architettura scalabile per l'accesso immediato da qualsiasi parte del mondo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-24 px-6 lg:px-12 border-t border-white/5">
+        <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-6 w-auto mb-6 opacity-40 mx-auto md:mx-0">
+                <p class="text-white/20 text-[0.6rem] mono uppercase tracking-widest">© 2026 Due.Zero s.r.l. — P.IVA 02120400342</p>
+            </div>
+            <nav class="flex gap-8 text-xs mono uppercase tracking-[0.3em] text-white/40">
+                <button onclick="window.close()" class="hover:text-brand-red transition-colors">Chiudi Scheda</button>
+                <a href="index.html#servizi" class="hover:text-brand-red transition-colors">I Nostri Servizi</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        document.querySelectorAll('.animate-reveal').forEach((el) => {
+            gsap.from(el, {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Due.Zero | Industrial Processing & Engineering</title>
+    <!-- Fonts Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            red: '#e11821',
+                            gray: '#111111',
+                            lightGray: '#F5F5F7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/core.css">
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 transition-colors duration-300">
+        <div class="flex items-center justify-between w-full">
+            <!-- Left: Hamburger -->
+            <button id="menu-toggle" class="flex items-center gap-4 group focus:outline-none">
+                <div class="space-y-1.5 burger-lines">
+                    <span class="block w-6 h-0.5 bg-white transition-all group-hover:bg-brand-red"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all group-hover:bg-brand-red"></span>
+                </div>
+                <span class="w-[2px] h-2 bg-brand-red"></span>
+                <span class="menu-text text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Menu</span>
+            </button>
+            
+            <!-- Center: Logo -->
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="block">
+                    <img src="./assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto !filter-none">
+                </a>
+            </div>
+            
+            <!-- Right: Contatti -->
+            <div>
+                <span class="w-[2px] h-2 bg-brand-red"></span>
+                <a href="contatti.html" target="_blank" class="nav-link text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Contatti</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="./assets/video.webm" type="video/webm">
+        </video>
+        <div class="absolute inset-0 bg-black/60"></div>
+        
+        <div class="relative z-10 max-w-4xl space-y-8">
+            <h1 class="text-xs mono tracking-[0.5em] uppercase text-white/60 mb-4 animate-fade-in flex items-center justify-center gap-3">
+                <span class="w-1 h-1 bg-brand-red rounded-full"></span>
+                Computational Thinking 2.0
+                <span class="w-1 h-1 bg-brand-red rounded-full"></span>
+            </h1>
+            <p class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                Documentazione e manualistica tecnica attraverso la <span class="text-brand-red">precisione</span>.
+            </p>
+            <div class="pt-8 flex justify-center gap-4">
+                <div class="w-0.5 h-16 bg-gradient-to-b from-brand-red to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Metodo (Light Mode) -->
+    <section id="metodo" class="section-light py-24 lg:py-40 px-6 lg:px-12 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                <div>
+                    <span class="text-xs mono uppercase tracking-[0.3em] text-black/40 mb-6 flex items-center gap-3">
+                    <span class="w-1 h-3 bg-brand-red"></span>
+                    Il nostro approccio
+                </span>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-12 leading-[1.1] tracking-tight">
+                        Soluzioni innovative per una comunicazione chiara ed efficace.
+                    </h2>
+                </div>
+                <div class="space-y-8 pt-4">
+                    <p class="text-xl md:text-2xl text-black/60 font-light leading-relaxed">
+                        Curiamo la redazione di documentazione tecnica e manualistica di prodotto con metodi innovativi e l'ausilio dei più avanzati CAT tools per garantirti qualità e conformità.
+                    </p>
+                    <div class="pt-12 border-t border-black/10">
+                        <span class="text-xs mono uppercase tracking-[0.3em] text-black/40 mb-8 block font-bold">Le nostre certificazioni</span>
+                        <div class="marquee">
+                            <div class="marquee-content text-2xl font-bold tracking-tighter opacity-20">
+                                <span>UNI EN ISO 9001:2015</span>
+                                <span>UNI EN ISO 17100:2017</span>
+                                <span>TECHNICAL COMPLIANCE</span>
+                                <span>MANUALISTICA 4.0</span>
+                                <span>ZERO DEFECTS POLICY</span>
+                            </div>
+                            <div class="marquee-content text-2xl font-bold tracking-tighter opacity-20" aria-hidden="true">
+                                <span>UNI EN ISO 9001:2015</span>
+                                <span>UNI EN ISO 17100:2017</span>
+                                <span>TECHNICAL COMPLIANCE</span>
+                                <span>MANUALISTICA 4.0</span>
+                                <span>ZERO DEFECTS POLICY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (Dark) -->
+    <section class="py-24 lg:py-40 px-6 lg:px-12 bg-black">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-24">
+                <h2 class="text-xs mono uppercase tracking-[0.3em] text-brand-red mb-4 flex items-center gap-3">
+                    <span class="w-1 h-3 bg-brand-red"></span>
+                    Processo Industriale
+                </h2>
+                <p class="text-3xl md:text-5xl font-bold">Timeline della Precisione</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Step 1 -->
+                <div class="space-y-6 group">
+                    <div class="text-5xl font-bold text-white/10 mono transition-colors group-hover:text-brand-red">01</div>
+                    <h3 class="text-xl font-bold">Analisi & Conformità</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">Valutazione dei rischi e conformità alle direttive europee e standard internazionali.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="space-y-6 group">
+                    <div class="text-5xl font-bold text-white/10 mono transition-colors group-hover:text-brand-red">02</div>
+                    <h3 class="text-xl font-bold">Redazione Tecnica</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">Sviluppo di contenuti chiari, efficaci e strutturati per ogni tipologia di prodotto.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="space-y-6 group">
+                    <div class="text-5xl font-bold text-white/10 mono transition-colors group-hover:text-brand-red">03</div>
+                    <h3 class="text-xl font-bold">Ingegnerizzazione 2.0</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">Trasposizione digitale e organizzazione dei flussi documentali tramite software dedicati.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="space-y-6 group">
+                    <div class="text-5xl font-bold text-white/10 mono transition-colors group-hover:text-brand-red">04</div>
+                    <h3 class="text-xl font-bold">Supporto After Sales</h3>
+                    <p class="text-white/40 text-sm leading-relaxed">Gestione dinamica dei ricambi e supporto continuo per l'intero ciclo di vita del prodotto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosistema due.zero -->
+    <section id="ecosistema" class="py-12 lg:py-24 bg-brand-lightGray text-black overflow-hidden" style="width: 100% !important; max-width: none !important;">
+        <div class="mx-auto" style="width: 96% !important; max-width: 2400px !important;">
+            <div class="mb-16">
+                <h2 class="text-xs md:text-sm mono uppercase tracking-[0.4em] text-black/40 mb-6 flex items-center justify-center gap-3">
+                    <span class="w-1 h-3 bg-brand-red"></span>
+                    Il nostro mondo
+                    <span class="w-1 h-3 bg-brand-red"></span>
+                </h2>
+                <p class="text-4xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight uppercase" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                    Ecosistema Due.Zero
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:h-[85vh] min-h-[800px]">
+                <!-- Module 1: Project 2.0 (Hero Card) -->
+                <div class="eco-card card-project group min-h-[500px] lg:min-h-0" style="grid-column: 1 / 2; grid-row: 1 / 3; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Project 2.0">
+                    <div class="eco-card-overlay"></div>
+                    <div class="eco-card-content">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></div>
+                            <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-white/60">Configuratore Software</span>
+                        </div>
+                        <h3 class="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 tracking-tighter">2.0 Project</h3>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                            <p class="text-white/80 text-lg max-w-md font-light">
+                                L'area riservata per la creazione dei tuoi progetti tecnici e il monitoraggio in tempo reale dell'avanzamento dei lavori.
+                            </p>
+                            <a href="project-2-0.html" target="_blank" class="inline-block glass-btn py-4 px-10 rounded-full text-white text-xs font-bold uppercase tracking-widest self-start transition-transform hover:scale-105 hover:bg-white/10 hover:border-white/50">Esplora 2.0 Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2: Hyperparts -->
+                <div class="eco-card card-hyperparts group min-h-[400px] lg:min-h-0" style="grid-column: 2 / 3; grid-row: 1 / 2; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Hyperparts">
+                    <div class="eco-card-overlay"></div>
+                    <div class="eco-card-content">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-2 h-2 rounded-full bg-[#ffd300] animate-pulse"></div>
+                            <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-white/60">Ricambi Interattivi</span>
+                        </div>
+                        <h3 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Hyperparts</h3>
+                        <p class="text-white/80 text-sm mb-8 leading-relaxed max-w-sm">
+                            La connessione globale tra costruttore e cliente. Gestione interattiva dei ricambi e soluzioni avanzate after sales.
+                        </p>
+                        <a href="hyperparts.html" target="_blank" class="inline-block w-fit bg-[#ffd300] text-[#003b75] py-3 px-8 rounded-full text-[0.6rem] font-black uppercase tracking-widest transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,211,0,0.4)]">Esplora Hyperparts</a>
+                    </div>
+                </div>
+
+                <!-- Module 3: Documentation 4.0 -->
+                <div class="eco-card card-docs group min-h-[400px] lg:min-h-0" style="grid-column: 2 / 3; grid-row: 2 / 3; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
+                    <img src="./assets/documentation.png?v=2" alt="Documentation 4.0">
+                    <div class="eco-card-overlay"></div>
+                    <div class="eco-card-content">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-2 h-2 rounded-full bg-[#b2182b] animate-pulse"></div>
+                            <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-white/60">Nuovo Standard</span>
+                        </div>
+                        <h3 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">Documentation 4.0</h3>
+                        <p class="text-white/80 text-sm mb-8 leading-relaxed max-w-sm">
+                            Documentazione interattiva e manualistica tecnica intelligente. Più valore al tuo prodotto attraverso la chiarezza.
+                        </p>
+                        <a href="https://duezero.eu/Technical-Documentation-40.aspx" class="inline-block w-fit border border-[#b2182b] text-[#b2182b] py-3 px-8 rounded-full text-[0.6rem] font-black uppercase tracking-widest transition-all hover:bg-[#b2182b] hover:text-white hover:scale-105 hover:shadow-[0_0_20px_rgba(178,24,43,0.4)]">Più Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Servizi (Light Mode Redesign) -->
+    <section id="servizi" class="section-light py-24 lg:py-48 px-6 lg:px-12 bg-white">
+        <div class="mx-auto w-full max-w-[1600px]">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+                <!-- Left Sticky Label -->
+                <div class="lg:w-2/12">
+                    <h2 class="text-xs mono uppercase tracking-[0.3em] text-brand-red mb-8 flex items-center gap-3 sticky top-24">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        I Servizi
+                    </h2>
+                </div>
+                
+                <!-- Right Content Area -->
+                <div class="lg:w-10/12">
+                    <!-- Service 01: Manualistica -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Processo — 01
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Manualistica Tecnica</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Uso e Manutenzione</span>
+                                    <span class="service-tag">Istruzioni di Montaggio</span>
+                                    <span class="service-tag">Redazione Strutturata</span>
+                                    <span class="service-tag">Safety First</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/manualistica-tecnica.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/engineering_service_asset_1775933467679.png" alt="Manualistica">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Gestiamo l'intero ciclo di produzione della documentazione tecnica. Creiamo manuali chiari ed efficaci che aumentano il prestigio del vostro macchinario garantendo sicurezza all'utente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 02: Compliance -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Compliance — 02
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Technical Compliance</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Marcatura CE</span>
+                                    <span class="service-tag">Analisi dei Rischi</span>
+                                    <span class="service-tag">Fascicolo Tecnico</span>
+                                    <span class="service-tag">Risk Assessment</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/technical-compliance.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/software_service_asset_1775933481677.png" alt="Compliance">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Validiamo i vostri macchinari secondo le normative vigenti. Dall'analisi dei rischi alla redazione del fascicolo tecnico, garantiamo che il vostro prodotto sia conforme agli standard CE.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 03: Traduzioni -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Language — 03
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Traduzioni Multilingue</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Over 500 Native Pros</span>
+                                    <span class="service-tag">CAT Tools Support</span>
+                                    <span class="service-tag">ISO 17100 Verified</span>
+                                    <span class="service-tag">Technical Glossaries</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/traduzioni-multilingue.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/automation_service_asset_1775933494374.png" alt="Traduzioni">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Oltre 500 traduttori madrelingua specializzati nei settori industriali. Supporto dei più innovativi strumenti di traduzione assistita per garantire precisione terminologica globale.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 04: Ricambi -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Service — 04
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Cataloghi Ricambi</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Interactive Parts</span>
+                                    <span class="service-tag">After Sales Portals</span>
+                                    <span class="service-tag">Spare Parts Strategy</span>
+                                    <span class="service-tag">Cloud Management</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/cataloghi-ricambi.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/logistics_service_asset_1775933509845.png" alt="Ricambi">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Trasformiamo i vostri cataloghi cartacei in potenti strumenti di vendita digitale. Soluzioni per la gestione ricambi interattiva che facilitano l'ordine corretti e il service post-vendita.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 05: Creative -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Marketing — 05
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Soluzioni Creative</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Industrial Branding</span>
+                                    <span class="service-tag">Web Design</span>
+                                    <span class="service-tag">Depliants & Brochures</span>
+                                    <span class="service-tag">Event Strategy</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/marketing-industriale.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/data_service_asset_1775933525011.png" alt="Creative">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Studiamo e creiamo soluzioni di comunicazione per il settore industriale. Dai loghi alle schede prodotto, curiamo ogni dettaglio per una comunicazione pubblicitaria di alto impatto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 06: Photo & Video -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Multimedia — 06
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Foto & Video Training</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Industrial Shooting</span>
+                                    <span class="service-tag">Video Commercials</span>
+                                    <span class="service-tag">Montaggio Istruzioni</span>
+                                    <span class="service-tag">Multimedia Support</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/photo-video-training.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/consulting_service_asset_1775933538172.png" alt="PhotoVideo">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Supporti multimediali per meeting e istruzioni di montaggio. Shooting industriali e video training specialistici per trasferire la conoscenza in maniera visiva ed efficace.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 07: 3D Mapping -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Graphics — 07
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Modellazione & Rendering</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Technical illustration</span>
+                                    <span class="service-tag">3D Modelling</span>
+                                    <span class="service-tag">Computer Grafica HQ</span>
+                                    <span class="service-tag">VR Ready Assets</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/modellazione-rendering.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/training_service_asset_1775933555273.png" alt="Rendering">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Dalla modellazione 3D al rendering fotorealistico. Se progetti in 3D questo è lo strumento migliore per vendere i tuoi macchinari prima ancora di averli costruiti.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 08: Software 2.0 -->
+                    <div class="service-block group">
+                        <div class="service-content grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                                                        <div class="lg:col-span-5 space-y-6">
+                                
+                                <span class="text-[0.6rem] mono uppercase tracking-[0.3em] text-black/30 flex items-center gap-2">
+                                    <span class="w-[2px] h-3 bg-brand-red"></span>
+                                    Intelligence — 08
+                                </span>
+                                <h3 class="text-4xl md:text-5xl font-bold tracking-tight">Soluzioni Software 2.0</h3>
+                                <div class="service-tags">
+                                    <span class="service-tag">Project Configurator</span>
+                                    <span class="service-tag">Technical Web Apps</span>
+                                    <span class="service-tag">Process Automation</span>
+                                    <span class="service-tag">Cloud Distribution</span>
+                                </div>
+                                                                <div class="pt-4">
+                                    <a href="services/soluzioni-software.html" class="service-cta">
+                                    Dettagli Servizio
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
+                                <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
+                                    <img src="./assets/sustainability_service_asset_1775933570400.png" alt="Soluzioni">
+                                </div>
+                                <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
+                                    Analizziamo le vostre esigenze e realizziamo soluzioni software su misura per la gestione della documentazione tecnica. Efficienza digitale per l'industria moderna.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+    <!-- Sezione Collaborazione (CTA - Refined & Compact) -->
+    <section id="cta" class="bg-[#262626] py-16 lg:py-24 px-6 lg:px-12 relative overflow-hidden border-t border-white/5">
+        <div class="mx-auto w-full max-w-[1600px] relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="text-left">
+                    <span class="text-[0.6rem] mono uppercase tracking-[0.4em] text-white/30 block mb-4">Collaborazione</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                        Sei pronto a <br class="hidden md:block"> innovare?
+                    </h2>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-8">
+                    <p class="text-white/40 mono text-[0.65rem] uppercase tracking-widest max-w-[200px] text-center sm:text-left leading-relaxed">
+                        Parla con i nostri engineer per una consulenza tecnica.
+                    </p>
+                    <a href="#contatti" class="group relative px-10 py-5 bg-brand-red text-white font-bold text-sm uppercase tracking-widest transition-all hover:bg-white hover:text-black active:scale-95">
+                        Contattaci
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-24 px-6 lg:px-12 border-t border-white/5 relative z-10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-20">
+                <!-- Col 1: Brand -->
+                <div class="space-y-6">
+                    <img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto opacity-80">
+                    <p class="text-white/40 text-xs mono uppercase tracking-widest leading-relaxed max-w-xs">
+                        Precisione e conformità per l'industria 4.0. <br> Documentazione tecnica e soluzioni digitali avanzate.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs mono uppercase tracking-[0.2em] text-white/80 mb-8 flex items-center gap-3">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        Navigazione
+                    </h4>
+                    <nav class="flex flex-col gap-4 text-xs mono uppercase tracking-widest text-white/40">
+                        <a href="index.html" class="hover:text-brand-red transition-colors text-white">Home</a>
+                        <a href="#servizi" class="hover:text-brand-red transition-colors">I Servizi</a>
+                        <a href="chi-siamo.html" target="_blank" class="hover:text-brand-red transition-colors font-medium text-white/60">Chi Siamo</a>
+                        <a href="lavora-con-noi.html" target="_blank" class="hover:text-brand-red transition-colors font-medium text-white/60">Lavora con Noi</a>
+                        <a href="#ecosistema" class="hover:text-brand-red transition-colors">Ecosistema</a>
+                    </nav>
+                </div>
+
+                <!-- Col 3: Collaboriamo -->
+                <div>
+                    <h4 class="text-xs mono uppercase tracking-[0.2em] text-white/80 mb-8 flex items-center gap-3">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        Collaboriamo
+                    </h4>
+                    <ul class="space-y-4 text-xs mono uppercase tracking-widest text-white/40">
+                        <li><a href="mailto:info@duezero.eu" class="hover:text-brand-red transition-colors">info@duezero.eu</a></li>
+                        <li><a href="https://linkedin.com/company/duezero" target="_blank" class="hover:text-brand-red transition-colors">LinkedIn</a></li>
+                        <li>Parma — Milano — Reggio Emilia</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contatti -->
+                <div>
+                    <h4 class="text-xs mono uppercase tracking-[0.2em] text-white/80 mb-8 flex items-center gap-3">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        Contatti
+                    </h4>
+                    <ul class="space-y-4 text-xs mono uppercase tracking-widest text-white/40">
+                        <li class="leading-relaxed">Via Persicetana Vecchia, 26<br>40132 Bologna (BO) Italy</li>
+                        <li><a href="tel:+390510543666" class="hover:text-white transition-colors">+39 051 0543666</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Apps -->
+                <div>
+                    <h4 class="text-xs mono uppercase tracking-[0.2em] text-white/80 mb-8 flex items-center gap-3">
+                        <span class="w-[2px] h-3 bg-brand-red"></span>
+                        Ecosistema Mobile
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-lg px-4 py-2 hover:bg-white/10 transition-all group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.1 2.48-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91 1.48.06 3.01.6 3.96 1.95a6.03 6.03 0 00-2.8 5.08c-.03 2.03 1.64 3 1.64 3.03a6.13 6.13 0 01-1.64 2.6zM15.47 5.1c.71-.84 1.17-2.02.99-3.17-1.01.04-2.22.66-2.95 1.49-.65.73-1.21 1.93-1.03 3.04 1.13.09 2.27-.51 2.99-1.36z"/></svg>
+                            <div class="text-left">
+                                <span class="block text-[0.4rem] mono uppercase opacity-40">Coming on</span>
+                                <span class="block text-xs font-bold uppercase tracking-tighter text-white/80 text-nowrap">App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-lg px-4 py-2 hover:bg-white/10 transition-all group">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.1-.131V1.945c.03-.047.063-.09.1-.131zM14.735 12.943l2.848-1.554-10.744-5.86 7.896 7.414zm4.074-2.224l3.052 1.666c.264.144.264.382 0 .526l-3.052 1.666-3.321-3.328 3.321-3.33zM14.735 11.057L6.839 3.643l10.744 5.86-2.848 1.554z"/></svg>
+                            <div class="text-left">
+                                <span class="block text-[0.4rem] mono uppercase opacity-40">Coming on</span>
+                                <span class="block text-xs font-bold uppercase tracking-tighter text-white/80 text-nowrap">Play Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Info / Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
+                <div class="text-[0.6rem] text-white/20 mono uppercase tracking-widest">
+                    &copy; 2026 Due.Zero S.p.A. — Tutti i diritti riservati.
+                </div>
+                <div class="flex gap-8 text-[0.6rem] text-white/20 mono uppercase tracking-widest">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Side Drawer Menu -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-black/80 z-[60]"></div>
+    <div id="drawer" class="fixed top-0 left-0 w-full md:w-1/2 h-full bg-brand-black z-[70] px-8 md:px-24 py-12 flex flex-col justify-center border-r border-white/5 shadow-2xl overflow-y-auto">
+        <!-- Tasto Chiudi -->
+        <button id="menu-close" class="absolute top-12 left-8 md:left-24 text-xs mono uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors p-4 -m-4">Chiudi</button>
+        
+        <nav class="space-y-6 md:space-y-8 mt-12">
+            <div id="submenu-parent" class="group">
+                <a href="#" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                    Servizi
+                    <svg class="w-6 h-6 opacity-40 group-hover:rotate-180 transition-transform ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div id="submenu" class="submenu pl-6 space-y-2 text-sm text-white/40 font-medium">
+                    <a href="services/manualistica-tecnica.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Manualistica Tecnica</a>
+                    <a href="services/technical-compliance.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Technical Compliance</a>
+                    <a href="services/traduzioni-multilingue.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Traduzioni Multilingue</a>
+                    <a href="services/cataloghi-ricambi.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Cataloghi Ricambi</a>
+                    <a href="services/marketing-industriale.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Marketing Industriale</a>
+                    <a href="services/photo-video-training.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Photo & Video Training</a>
+                    <a href="services/modellazione-rendering.html" class="block py-2 border-b border-white/5 hover:text-brand-red transition-colors">Modellazione & Rendering</a>
+                    <a href="services/soluzioni-software.html" class="block py-2 hover:text-brand-red transition-colors">Soluzioni Software 2.0</a>
+                </div>
+            </div>
+            <a href="hyperparts.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                Hyperparts
+            </a>
+            <a href="https://duezero.eu/Technical-Documentation-40.aspx" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                Documentation 4.0
+            </a>
+            <a href="lavora-con-noi.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                Lavora con Noi
+            </a>
+        </nav>
+        
+        <!-- Drawer Footer -->
+        <div class="mt-auto pt-12 flex justify-between items-end border-t border-white/5">
+            <a href="mailto:info@duezero.eu" class="text-[0.6rem] mono uppercase tracking-widest text-white hover:text-brand-red transition-colors">info@duezero.eu</a>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/company/due-zero-srl/" target="_blank" class="text-[0.6rem] mono uppercase tracking-widest text-white hover:text-brand-red transition-colors">Linkedin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts: GSAP & Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
