@@ -33,7 +33,15 @@
     </script>
     <link rel="stylesheet" href="assets/css/core.css">
 </head>
-<body class="antialiased">
+<body class="antialiased overflow-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">Due.Zero</h1>
+        <div class="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden">
+            <div id="preloader-bar" class="h-full bg-brand-red w-0"></div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 transition-colors duration-300">
@@ -183,7 +191,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:h-[85vh] min-h-[800px]">
                 <!-- Module 1: Project 2.0 (Hero Card) -->
                 <div class="eco-card card-project group min-h-[500px] lg:min-h-0" style="grid-column: 1 / 2; grid-row: 1 / 3; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Project 2.0">
+                    <img src="./assets/project_2_0_bg.png" alt="Project 2.0">
                     <div class="eco-card-overlay"></div>
                     <div class="eco-card-content">
                         <div class="flex items-center gap-2 mb-4">
@@ -202,7 +210,7 @@
 
                 <!-- Module 2: Hyperparts -->
                 <div class="eco-card card-hyperparts group min-h-[400px] lg:min-h-0" style="grid-column: 2 / 3; grid-row: 1 / 2; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="Hyperparts">
+                    <img src="./assets/hyperparts.jpg" alt="Hyperparts">
                     <div class="eco-card-overlay"></div>
                     <div class="eco-card-content">
                         <div class="flex items-center gap-2 mb-4">
@@ -219,7 +227,7 @@
 
                 <!-- Module 3: Documentation 4.0 -->
                 <div class="eco-card card-docs group min-h-[400px] lg:min-h-0" style="grid-column: 2 / 3; grid-row: 2 / 3; background-color: #000000 !important; background: #000000 !important; opacity: 1 !important;">
-                    <img src="./assets/documentation.png?v=2" alt="Documentation 4.0">
+                    <img src="./assets/documentation.png" alt="Documentation 4.0">
                     <div class="eco-card-overlay"></div>
                     <div class="eco-card-content">
                         <div class="flex items-center gap-2 mb-4">
@@ -276,7 +284,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/engineering_service_asset_1775933467679.png" alt="Manualistica">
+                                    <img src="./assets/engineering_service_asset_1775933467679.jpg" alt="Manualistica">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Gestiamo l'intero ciclo di produzione della documentazione tecnica. Creiamo manuali chiari ed efficaci che aumentano il prestigio del vostro macchinario garantendo sicurezza all'utente.
@@ -310,7 +318,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/software_service_asset_1775933481677.png" alt="Compliance">
+                                    <img src="./assets/software_service_asset_1775933481677.jpg" alt="Compliance">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Validiamo i vostri macchinari secondo le normative vigenti. Dall'analisi dei rischi alla redazione del fascicolo tecnico, garantiamo che il vostro prodotto sia conforme agli standard CE.
@@ -344,7 +352,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/automation_service_asset_1775933494374.png" alt="Traduzioni">
+                                    <img src="./assets/automation_service_asset_1775933494374.jpg" alt="Traduzioni">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Oltre 500 traduttori madrelingua specializzati nei settori industriali. Supporto dei più innovativi strumenti di traduzione assistita per garantire precisione terminologica globale.
@@ -378,7 +386,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/logistics_service_asset_1775933509845.png" alt="Ricambi">
+                                    <img src="./assets/logistics_service_asset_1775933509845.jpg" alt="Ricambi">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Trasformiamo i vostri cataloghi cartacei in potenti strumenti di vendita digitale. Soluzioni per la gestione ricambi interattiva che facilitano l'ordine corretti e il service post-vendita.
@@ -412,7 +420,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/data_service_asset_1775933525011.png" alt="Creative">
+                                    <img src="./assets/data_service_asset_1775933525011.jpg" alt="Creative">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Studiamo e creiamo soluzioni di comunicazione per il settore industriale. Dai loghi alle schede prodotto, curiamo ogni dettaglio per una comunicazione pubblicitaria di alto impatto.
@@ -446,7 +454,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/consulting_service_asset_1775933538172.png" alt="PhotoVideo">
+                                    <img src="./assets/consulting_service_asset_1775933538172.jpg" alt="PhotoVideo">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Supporti multimediali per meeting e istruzioni di montaggio. Shooting industriali e video training specialistici per trasferire la conoscenza in maniera visiva ed efficace.
@@ -480,7 +488,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/training_service_asset_1775933555273.png" alt="Rendering">
+                                    <img src="./assets/training_service_asset_1775933555273.jpg" alt="Rendering">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Dalla modellazione 3D al rendering fotorealistico. Se progetti in 3D questo è lo strumento migliore per vendere i tuoi macchinari prima ancora di averli costruiti.
@@ -514,7 +522,7 @@
                             </div>
                             <div class="lg:col-span-7 flex flex-col gap-8 w-full mt-12 lg:mt-0">
                                 <div class="service-image-container shadow-2xl !rounded-2xl !max-w-full lg:!max-w-md overflow-hidden">
-                                    <img src="./assets/sustainability_service_asset_1775933570400.png" alt="Soluzioni">
+                                    <img src="./assets/sustainability_service_asset_1775933570400.jpg" alt="Soluzioni">
                                 </div>
                                 <p class="text-black/60 text-lg md:text-xl leading-relaxed max-w-lg">
                                     Analizziamo le vostre esigenze e realizziamo soluzioni software su misura per la gestione della documentazione tecnica. Efficienza digitale per l'industria moderna.
@@ -543,7 +551,7 @@
                     <p class="text-white/40 mono text-[0.65rem] uppercase tracking-widest max-w-[200px] text-center sm:text-left leading-relaxed">
                         Parla con i nostri engineer per una consulenza tecnica.
                     </p>
-                    <a href="#contatti" class="group relative px-10 py-5 bg-brand-red text-white font-bold text-sm uppercase tracking-widest transition-all hover:bg-white hover:text-black active:scale-95">
+                    <a href="contatti.html" target="_blank" class="group relative px-10 py-5 bg-brand-red text-white font-bold text-sm uppercase tracking-widest transition-all hover:bg-white hover:text-black active:scale-95">
                         Contattaci
                     </a>
                 </div>
@@ -669,6 +677,9 @@
             <a href="https://duezero.eu/Technical-Documentation-40.aspx" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
                 Documentation 4.0
             </a>
+            <a href="chi-siamo.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
+                Chi Siamo
+            </a>
             <a href="lavora-con-noi.html" target="_blank" class="drawer-link flex items-center gap-4 text-3xl font-bold uppercase tracking-widest" style="font-family: 'Barlow Condensed', sans-serif; font-style: italic;">
                 Lavora con Noi
             </a>
@@ -687,5 +698,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if(window.gsap) {
+                gsap.to("#preloader-bar", {
+                    width: "100%",
+                    duration: 1.2,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        gsap.to("#preloader", {
+                            yPercent: -100,
+                            duration: 0.8,
+                            ease: "power3.inOut",
+                            onComplete: () => {
+                                document.body.classList.remove("overflow-hidden");
+                            }
+                        });
+                    }
+                });
+            } else {
+                document.getElementById("preloader").style.display = "none";
+                document.body.classList.remove("overflow-hidden");
+            }
+        });
+    </script>
 </body>
 </html>
