@@ -38,17 +38,17 @@
     <!-- Navbar Semplificata (Senza Drawer per pagina target blank) -->
     <header class="fixed top-0 w-full z-50 px-6 lg:px-12 py-8 transition-colors duration-300">
         <div class="flex items-center justify-between w-full">
-            <div class="flex items-center gap-4">
-                <span class="w-[2px] h-2 bg-brand-red"></span>
-                <span class="text-xs mono uppercase tracking-widest text-white/60">Connessioni</span>
+            <div class="flex items-center gap-2 md:gap-4">
+                <span class="w-[2px] h-2 bg-brand-red hidden md:block"></span>
+                <span class="text-[10px] md:text-xs mono uppercase tracking-widest text-white/60">Connessioni</span>
             </div>
             <div class="absolute left-1/2 -translate-x-1/2">
-                <a href="index.html" class="block"><img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-8 w-auto"></a>
+                <a href="index.html" class="block"><img src="assets/DueZero_logo.png" alt="Due.Zero" class="h-5 md:h-8 w-auto"></a>
             </div>
             <div>
-                <button onclick="window.close()" class="group flex items-center gap-4 focus:outline-none">
-                    <span class="w-[2px] h-2 bg-brand-red"></span>
-                    <span class="text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Chiudi Scheda</span>
+                <button onclick="window.close()" class="group flex items-center gap-2 md:gap-4 focus:outline-none">
+                    <span class="w-[2px] h-2 bg-brand-red hidden md:block"></span>
+                    <span class="text-[10px] md:text-xs mono uppercase tracking-widest group-hover:text-brand-red transition-colors">Chiudi Scheda</span>
                 </button>
             </div>
         </div>
@@ -61,7 +61,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
         </div>
         
-        <div class="container mx-auto max-w-7xl relative z-10">
+        <div class="container mx-auto max-w-7xl relative z-10 pt-24 md:pt-0">
             <nav class="flex mb-12 text-xs mono uppercase tracking-widest text-white/30 gap-4 items-center animate-reveal">
                 <span class="w-[2px] h-3 bg-brand-red"></span>
                 <span>Home</span>
